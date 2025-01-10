@@ -3,20 +3,20 @@ import { Container } from "./ui/container";
 export function Hero() {
   return (
     <div className="relative min-h-screen flex items-center">
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: 'url("https://images.unsplash.com/photo-1513836279014-a89f7a76ae86")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        <div className="absolute inset-0 bg-black/40" />
+      {/* Animated Background */}
+      <div className="absolute inset-0 z-0">
+        <div 
+          className="absolute inset-0 bg-gradient-to-br from-forest/20 to-earth-light/30"
+          style={{
+            backgroundSize: '400% 400%',
+            animation: 'gradient 15s ease infinite',
+          }}
+        />
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1513836279014-a89f7a76ae86')] bg-cover bg-center opacity-40" />
       </div>
 
       <Container className="relative z-10 pt-20">
-        <div className="max-w-3xl text-white">
+        <div className="max-w-3xl text-gray-800">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-up [--animate-delay:200ms]">
             Protecting Earth's Future, Today
           </h1>
@@ -33,7 +33,7 @@ export function Hero() {
             </a>
             <a
               href="/work"
-              className="inline-block bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-md backdrop-blur-sm transition-colors"
+              className="inline-block bg-white/10 hover:bg-white/20 text-gray-800 px-6 py-3 rounded-md backdrop-blur-sm transition-colors"
             >
               Our Projects
             </a>
