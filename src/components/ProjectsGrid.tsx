@@ -1,4 +1,9 @@
 import { Container } from "./ui/container";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
 import { useInView } from "react-intersection-observer";
 import { cn } from "@/lib/utils";
 
@@ -32,55 +37,38 @@ export function ProjectsGrid() {
   return (
     <section className="py-20">
       <Container>
-        <h2 className="text-3xl font-bold text-center mb-12 text-forest">Latest Projects</h2>
-        <div
-          ref={ref}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
-          {projects.map((project, index) => (
-            <div
-              key={project.title}
-              className={cn(
-                "group rounded-lg overflow-hidden shadow-lg opacity-0",
-                inView && "animate-fade-up",
-                inView && `[--animate-delay:${200 + index * 100}ms]`
-              )}
-            >
-              <div className="relative h-48 overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                />
-                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm text-forest">
-                  {project.category}
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2 text-forest">{project.title}</h3>
-                <p className="text-gray-600 mb-4">{project.description}</p>
-                <a
-                  href="#"
-                  className="text-forest hover:text-forest-light transition-colors inline-flex items-center"
-                >
-                  Learn more
-                  <svg
-                    className="w-4 h-4 ml-2"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
+        <h2 className="text-3xl font-bold text-center mb-12 text-forest dark:text-forest-light">Latest Projects</h2>
+        <div ref={ref}>
+          <Carousel opts={{ align: "start", loop: true }}>
+            <CarouselContent>
+              {projects.map((project, index) => (
+                <CarouselItem key={project.title} className="md:basis-1/2 lg:basis-1/3">
+                  <div
+                    className={cn(
+                      "group rounded-lg overflow-hidden shadow-lg opacity-0",
+                      inView && "animate-fade-up",
+                      inView && `[animation-delay:${200 + index * 100}ms]`
+                    )}
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </a>
-              </div>
-            </div>
-          ))}
+                    <div className="relative h-48 overflow-hidden">
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                      />
+                      <div className="absolute top-4 left-4 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm text-forest dark:text-forest-light">
+                        {project.category}
+                      </div>
+                    </div>
+                    <div className="p-6 bg-white dark:bg-gray-900">
+                      <h3 className="text-xl font-semibold mb-2 text-forest dark:text-forest-light">{project.title}</h3>
+                      <p className="text-gray-600 dark:text-gray-300">{project.description}</p>
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
         </div>
       </Container>
     </section>
