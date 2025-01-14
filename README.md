@@ -1,69 +1,114 @@
-# Welcome to your Lovable project
+# Herado NGO Website
 
-## Project info
+Welcome to the Herado NGO website repository! This project is a modern, responsive, and user-friendly website built to support the mission and initiatives of Herado, a non-governmental organization dedicated to making a positive impact in the community.
 
-**URL**: https://lovable.dev/projects/1fc32d6d-92d9-4970-8615-af2874b87544
+## Table of Contents
 
-## How can I edit this code?
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Development](#development)
+  - [Running the Development Server](#running-the-development-server)
+  - [Building for Production](#building-for-production)
+- [Contributing](#contributing)
+- [License](#license)
 
-There are several ways of editing your application.
+## Technologies Used
 
-**Use Lovable**
+This project is built with the following technologies:
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/1fc32d6d-92d9-4970-8615-af2874b87544) and start prompting.
+- **[Vite](https://vitejs.dev/)**: A fast and modern build tool for web development.
+- **[TypeScript](https://www.typescriptlang.org/)**: A strongly typed superset of JavaScript for better code quality and maintainability.
+- **[React](https://reactjs.org/)**: A popular JavaScript library for building user interfaces.
+- **[shadcn-ui](https://ui.shadcn.com/)**: A collection of beautifully designed, accessible, and customizable UI components.
+- **[Tailwind CSS](https://tailwindcss.com/)**: A utility-first CSS framework for rapidly building custom designs.
 
-Changes made via Lovable will be committed automatically to this repo.
+## Getting Started
 
-**Use your preferred IDE**
+### Prerequisites
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Before you begin, ensure you have the following installed:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- [Node.js](https://nodejs.org/) (v16 or higher)
+- [npm](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/)
 
-Follow these steps:
+### Installation
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+1. **Clone the repository:**
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+   ```bash
+   git clone https://github.com/your-username/herado-website.git
+   cd herodo-website
+   ```
 
-# Step 3: Install the necessary dependencies.
-npm i
+2. **Install dependencies:**
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+   ```bash
+   npm install
+   ```
+
+   or if you're using Yarn:
+
+   ```bash
+   yarn install
+   ```
+
+3. **Set up environment variables:**
+
+   Create a `.env` file in the root directory and add any necessary environment variables. For example:
+
+   ```env
+   VITE_API_URL=https://api.herado.org
+   ```
+
+## Development
+
+### Running the Development Server
+
+To start the development server, run:
+
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+or with Yarn:
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```bash
+yarn dev
+```
 
-**Use GitHub Codespaces**
+This will start the Vite development server, and you can view the website at `http://localhost:3000`.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Building for Production
 
-## What technologies are used for this project?
+To build the project for production, run:
 
-This project is built with .
+```bash
+npm run build
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+or with Yarn:
 
-## How can I deploy this project?
+```bash
+yarn build
+```
 
-Simply open [Lovable](https://lovable.dev/projects/1fc32d6d-92d9-4970-8615-af2874b87544) and click on Share -> Publish.
+The production-ready files will be generated in the `dist` directory.
 
-## I want to use a custom domain - is that possible?
+## Contributing
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+We welcome contributions from the community! If you'd like to contribute to the Herado website, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bugfix.
+3. Make your changes and commit them with clear, descriptive messages.
+4. Push your changes to your fork.
+5. Submit a pull request to the main repository.
+
+Please ensure your code follows the project's coding standards and includes appropriate tests if applicable.
+
+
+---
+
+Thank you for your interest in the Herado NGO website! If you have any questions or need further assistance, please feel free to reach out to us. Together, we can make a difference! 🌍💙
